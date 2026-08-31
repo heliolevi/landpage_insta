@@ -1,5 +1,18 @@
 const form = document.getElementById('leadForm');
 
+if (window.anime) {
+  const animatedElements = document.querySelectorAll('.hero-copy, .hero-card, .form-section, .lead-form > *');
+
+  anime({
+    targets: animatedElements,
+    opacity: [0, 1],
+    translateY: [18, 0],
+    duration: 700,
+    delay: anime.stagger(70, { start: 100 }),
+    easing: 'easeOutCubic',
+  });
+}
+
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -48,5 +61,15 @@ form.addEventListener('submit', (event) => {
 
   window.open(whatsappUrl, '_blank');
   form.reset();
+
+  if (window.anime) {
+    anime({
+      targets: form,
+      scale: [1, 1.01, 1],
+      duration: 450,
+      easing: 'easeOutCubic',
+    });
+  }
+
   alert('Sua solicitação foi preparada no WhatsApp. Você pode revisar e enviar para Hélio Levi.');
 });
