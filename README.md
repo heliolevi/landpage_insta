@@ -1,125 +1,38 @@
-# Formulário de Agendamento para Projetos Empresariais
+# HL · Landing de diagnóstico
 
-Este projeto é um formulário de captação de leads para agendar projetos de automação, desenvolvimento de sites, sistemas e soluções empresariais com Hélio Levi.
+Landing page da HL para captar pedidos de diagnóstico grátis. Criada por Hélio Levi.
 
-Link do portfólio:
-https://heliolevi.github.io/Projeto-portifolio/
+Publicada em: https://heliolevi.github.io/landpage_insta/
 
-## Objetivo
+## Como funciona
+- A página explica o que a HL resolve, o processo (Diagnóstico, Escopo, Construção, Entrega), projetos reais e dúvidas comuns.
+- O quiz de 3 passos monta uma mensagem e abre o WhatsApp com tudo preenchido.
+- O número que recebe os pedidos fica em `script.js`:
 
-Coletar informações de clientes em potencial e encaminhar a mensagem diretamente para WhatsApp, permitindo que o cliente envie uma proposta ou agende uma conversa sobre a criação de automação ou solução personalizada.
+```js
+const WHATSAPP = '5598988554840';
+```
 
-## Funcionalidades
-
-- Formulário com dados do cliente
-- Selecione o tipo de serviço
-- Defina urgência e orçamento
-- Campo para descrição do projeto
-- Envio direto para WhatsApp com mensagem pré-formatada
-- Layout responsivo para desktop e mobile
-
-## Estrutura do projeto
+## Estrutura
 
 ```text
-script-de-formulario/
+landpage_insta/
 ├── index.html
 ├── styles.css
 ├── script.js
-├── README.md
-└── .gitignore
+├── assets/      foto do Hélio (webp + jpg)
+├── fonts/       Lexend Exa, Manrope, JetBrains Mono (OFL, self-hosted)
+└── docs/design-tokens.md
 ```
 
-## Como executar
-
-### Opção 1: abrir direto no navegador
-
-Basta abrir o arquivo `index.html` no navegador.
-
-### Opção 2: usar um servidor local
-
-No terminal, na pasta do projeto, execute:
+## Rodar localmente
 
 ```bash
 python -m http.server 8000
 ```
 
-Depois acesse:
-
-```text
-http://localhost:8000
-```
-
-## Integração com WhatsApp
-
-O formulário já envia uma mensagem para o número informado no script em `script.js` utilizando a URL do WhatsApp:
-
-```js
-const whatsappNumber = '5598988554840';
-```
-
-Este é o número do cliente/empresa que receberá os leads.
-
-### Observação
-
-Se quiser enviar por API real em vez de abrir o WhatsApp no navegador, será necessário usar uma solução de API de WhatsApp ou WhatsApp Business.
-
-## O que você vai precisar para usar API de WhatsApp
-
-Se você quiser automatizar o envio com API em vez de apenas abrir o WhatsApp, normalmente você precisará de:
-
-1. Número verificado do WhatsApp Business
-2. Acesso ao Meta Business Suite / Facebook Business Manager
-3. Conta de desenvolvedor da Meta
-4. App criado no Meta for Developers
-5. Token de acesso da API
-6. Backend para receber os dados do formulário e enviar as mensagens
-7. Webhook opcional para receber respostas do cliente
-8. Hospedagem (Vercel, Render, Railway, VPS, etc.)
-
-### Serviços prontos que ajudam a integrar
-
-- Twilio
-- 360dialog
-- Z-API
-- Meta WhatsApp Business API
-
-## Recomendação prática
-
-Para um projeto simples, o caminho mais rápido é:
-
-- manter o formulário front-end
-- abrir WhatsApp com mensagem pré-pronta
-- depois evoluir para uma API real quando houver volume de leads
-
-## Como enviar para o seu número
-
-Seu número informado: `98988554840`
-
-Para WhatsApp em formato internacional, o correto geralmente é:
-
-```text
-+55 98 98855-4840
-```
-
-Na URL de envio via WhatsApp, normalmente fica assim:
-
-```text
-5598988554840
-```
-
-## Dicas de melhoria
-
-- armazenar os leads em banco de dados
-- enviar e-mail também para o cliente e para sua equipe
-- criar painel administrativo para visualizar propostas
-- salvar agenda de reuniões
-- conectar com Google Calendar ou Notion
+Abra http://localhost:8000.
 
 ## Autor
 
-Hélio Levi
-
-## Portfólio
-
-https://heliolevi.github.io/Projeto-portifolio/
-#
+Hélio Levi · [Portfólio](https://heliolevi.github.io/Projeto-portifolio/) · [Instagram @hl.build](https://www.instagram.com/hl.build/)
