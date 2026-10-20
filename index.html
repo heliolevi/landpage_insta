@@ -2,151 +2,373 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agendamento de Projetos | Hélio Levi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HL | Sistemas e automação para o seu negócio</title>
     <meta
       name="description"
-      content="Formulário para agendar criação de automação, sites, sistemas e projetos empresariais com Hélio Levi."
+      content="Eu transformo trabalho manual em sistema. Automações, sistemas e sites entregues com manual e suporte. Agende um diagnóstico grátis de 30 minutos."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="theme-color" content="#050b1c" />
+    <meta property="og:title" content="HL | Sistemas e automação para o seu negócio" />
+    <meta property="og:description" content="Automações, sistemas e sites entregues com manual e suporte. Diagnóstico grátis de 30 minutos." />
+    <meta property="og:image" content="assets/helio-levi.jpg" />
+    <link rel="preload" href="fonts/lexend-exa-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   </head>
   <body>
-    <div class="page-shell">
-      <header class="topbar">
-        <div class="brand-wrap">
-          <div class="brand-badge">HL</div>
-          <div>
-            <p class="eyebrow">Consultoria & Automação</p>
-            <h1>Hélio Levi</h1>
+    <!-- Ícones: Lucide (ISC), traço 1.5 -->
+    <svg width="0" height="0" class="sprite" aria-hidden="true">
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" /></symbol>
+      <symbol id="i-message" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1" /><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /><path d="M12 11h4" /><path d="M12 16h4" /><path d="M8 11h.01" /><path d="M8 16h.01" /></symbol>
+      <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13" /><path d="m8 6 2-2" /><path d="m18 16 2-2" /><path d="m17 11 4.3 4.3c.94.94.94 2.46 0 3.4l-2.6 2.6c-.94.94-2.46.94-3.4 0L11 17" /><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /><path d="m15 5 4 4" /></symbol>
+      <symbol id="i-hammer" viewBox="0 0 24 24"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9" /><path d="m18 15 4-4" /><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5" /></symbol>
+      <symbol id="i-package" viewBox="0 0 24 24"><path d="m16 16 2 2 4-4" /><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14" /><path d="m7.5 4.27 9 5.15" /><polyline points="3.29 7 12 12 20.71 7" /><line x1="12" x2="12" y1="22" y2="12" /></symbol>
+      <!-- Marca Trace: hastes 1u x 6u, barra 1,75u, pé 1u, nó 1u a 0,375u do pé (u = 8) -->
+      <symbol id="trace" viewBox="0 0 49 48">
+        <rect x="0" y="0" width="8" height="48" rx="1" fill="var(--foam)" />
+        <rect x="8" y="20" width="14" height="8" fill="var(--cyan)" />
+        <rect x="22" y="0" width="8" height="48" rx="1" fill="var(--foam)" />
+        <rect x="30" y="40" width="8" height="8" fill="var(--cyan)" />
+        <circle cx="45" cy="44" r="4" fill="var(--cyan)" />
+      </symbol>
+    </svg>
+
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="nav" id="topo">
+      <div class="wrap nav__inner">
+        <a class="brand" href="#topo" aria-label="HL, voltar ao início">
+          <svg class="brand__mark" aria-hidden="true"><use href="#trace" /></svg>
+          <span class="brand__name">HL</span>
+        </a>
+        <nav class="nav__links" aria-label="Seções">
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#duvidas">Dúvidas</a>
+        </nav>
+        <a class="btn btn--primary btn--sm" href="#diagnostico">Agendar diagnóstico</a>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap hero__grid">
+          <div class="hero__copy">
+            <h1 id="hero-title" class="display">Eu transformo trabalho manual em <span class="cy">sistema</span>.</h1>
+            <p class="lead">
+              Automações, sistemas e sites para o seu negócio, entregues com manual e suporte. De São Luís para todo o Brasil.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#diagnostico" data-cta="hero">
+                Agendar diagnóstico
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </a>
+              <a class="link" href="#projetos">Ver projetos</a>
+            </div>
+          </div>
+
+          <figure class="founder">
+            <div class="founder__frame">
+              <picture>
+                <source srcset="assets/helio-levi.webp" type="image/webp" />
+                <img
+                  src="assets/helio-levi.jpg"
+                  width="720"
+                  height="900"
+                  alt="Hélio Levi, criador da HL, sentado à mesa de um restaurante"
+                  fetchpriority="high"
+                />
+              </picture>
+            </div>
+            <figcaption class="lockup">
+              <svg class="lockup__mark" aria-hidden="true"><use href="#trace" /></svg>
+              <span class="lockup__rule" aria-hidden="true"></span>
+              <span class="lockup__text">
+                <span class="lockup__name">hélio levi</span>
+                <span class="lockup__role">Criador da HL</span>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- O QUE EU RESOLVO -->
+      <section class="section" aria-labelledby="resolvo-title">
+        <div class="wrap">
+          <h2 id="resolvo-title" class="h2">Se isso acontece no seu negócio, dá pra automatizar.</h2>
+          <p class="sub">Exemplos do tipo de trabalho que eu tiro das suas mãos.</p>
+
+          <ul class="swap" role="list">
+            <li class="swap__row">
+              <p class="swap__before">Confirmo horário com cada cliente, um por um, no WhatsApp.</p>
+              <svg class="swap__arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+              <p class="swap__after">O cliente recebe a confirmação e o lembrete sozinho.</p>
+            </li>
+            <li class="swap__row">
+              <p class="swap__before">O controle do estoque vive numa planilha que só uma pessoa entende.</p>
+              <svg class="swap__arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+              <p class="swap__after">Um painel simples mostra o que entrou, o que saiu e o que está acabando.</p>
+            </li>
+            <li class="swap__row">
+              <p class="swap__before">Fecho o relatório do mês copiando números de três lugares diferentes.</p>
+              <svg class="swap__arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+              <p class="swap__after">O relatório se monta sozinho, com a origem de cada número.</p>
+            </li>
+            <li class="swap__row">
+              <p class="swap__before">Meu site é um cartão de visitas parado.</p>
+              <svg class="swap__arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+              <p class="swap__after">Uma página que explica o que você faz e leva contatos para o seu WhatsApp.</p>
+            </li>
+          </ul>
+          <p class="swap__legend"><span>Hoje</span><span>Com a automação</span></p>
+        </div>
+      </section>
+
+      <!-- COMO FUNCIONA -->
+      <section class="section section--deep" id="como-funciona" aria-labelledby="como-title">
+        <div class="wrap">
+          <h2 id="como-title" class="h2">Do primeiro papo à entrega, sem surpresa.</h2>
+          <p class="sub">Você sabe o que vai receber, quando e por quanto antes de eu escrever a primeira linha.</p>
+
+          <ol class="trace" role="list" data-trace>
+            <li class="trace__step">
+              <span class="trace__node" aria-hidden="true"><svg class="icon"><use href="#i-message" /></svg></span>
+              <h3 class="h3">Diagnóstico</h3>
+              <p>Uma conversa grátis de 30 minutos. Você me conta como o processo funciona hoje e eu mostro onde está o gargalo.</p>
+            </li>
+            <li class="trace__step">
+              <span class="trace__node" aria-hidden="true"><svg class="icon"><use href="#i-ruler" /></svg></span>
+              <h3 class="h3">Escopo</h3>
+              <p>Eu escrevo o que vai ser feito, o prazo e o preço fechado. Você aprova antes de qualquer pagamento.</p>
+            </li>
+            <li class="trace__step">
+              <span class="trace__node" aria-hidden="true"><svg class="icon"><use href="#i-hammer" /></svg></span>
+              <h3 class="h3">Construção</h3>
+              <p>Eu construo e te mostro o andamento. Você testa com os seus dados reais.</p>
+            </li>
+            <li class="trace__step">
+              <span class="trace__node" aria-hidden="true"><svg class="icon"><use href="#i-package" /></svg></span>
+              <h3 class="h3">Entrega</h3>
+              <p>Você recebe o sistema funcionando, o manual em linguagem simples e suporte para ajustes.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- PROJETOS -->
+      <section class="section" id="projetos" aria-labelledby="projetos-title">
+        <div class="wrap">
+          <h2 id="projetos-title" class="h2">Coisas que eu já construí.</h2>
+          <p class="sub">Projetos reais e provas de conceito. Os detalhes de cada um estão no portfólio.</p>
+
+          <div class="bento">
+            <article class="tile tile--wide">
+              <div class="tile__body">
+                <h3 class="h3">São Luís Weather Watch</h3>
+                <p>API documentada que recebe dados do clima ao vivo, pensada para a Defesa Civil e a prefeitura.</p>
+                <ul class="tags" role="list"><li>Node.js</li><li>MongoDB</li><li>Swagger</li><li>prova de conceito</li></ul>
+              </div>
+              <figure class="log" aria-label="Exemplo de resposta da API">
+                <figcaption class="log__head"><span>GET /api/clima/sao-luis</span><span>200</span></figcaption>
+<pre><code>{
+  <span class="k">"bairro"</span>: <span class="s">"Centro"</span>,
+  <span class="k">"chuva_mm_1h"</span>: <span class="n">12.4</span>,
+  <span class="k">"alerta"</span>: <span class="s">"atenção"</span>,
+  <span class="k">"fonte"</span>: <span class="s">"estação automática"</span>,
+  <span class="k">"atualizado"</span>: <span class="s">"2026-10-20T16:30-03:00"</span>
+}</code></pre>
+                <p class="log__note">// ilustrativo</p>
+              </figure>
+            </article>
+
+            <article class="tile tile--dots">
+              <h3 class="h3">QR Hunt, IT-WORKS UNDB</h3>
+              <p>Caça ao QR code com login para os três dias do evento de tecnologia da Escola de Tecnologia UNDB.</p>
+              <ul class="tags" role="list"><li>Gamificação</li><li>Web app</li><li>Login</li></ul>
+            </article>
+
+            <article class="tile tile--cobalt">
+              <h3 class="h3">Bot Task</h3>
+              <p>Automação que roda em segundo plano: agenda, faz follow-up e acompanha o status sem ninguém apertar botão.</p>
+              <ul class="tags" role="list"><li>Java</li><li>Spring Boot</li><li>Google Cloud</li><li>prova de conceito</li></ul>
+            </article>
+
+            <article class="tile">
+              <h3 class="h3">Assistente com IA para barbearia</h3>
+              <p>Atende clientes em linguagem natural: tira dúvidas, marca horário e organiza os serviços.</p>
+              <ul class="tags" role="list"><li>Node.js</li><li>OpenAI</li></ul>
+            </article>
+          </div>
+
+          <a class="link link--out" href="https://heliolevi.github.io/Projeto-portifolio/" target="_blank" rel="noopener">
+            Ver o portfólio completo
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- QUEM CONSTRÓI -->
+      <section class="section section--deep" aria-labelledby="quem-title">
+        <div class="wrap about">
+          <svg class="about__mark" aria-hidden="true"><use href="#trace" /></svg>
+          <div class="about__copy">
+            <h2 id="quem-title" class="h2">Quem constrói é quem te atende.</h2>
+            <p>
+              Eu sou o Hélio Levi, criador da HL. Sou desenvolvedor back-end em São Luís e construo APIs, automações e sistemas que dá
+              pra auditar: cada dado tem origem e cada entrega vem com manual.
+            </p>
+            <p>
+              Sem agência no meio e sem repassar o seu projeto para outra pessoa. Você fala direto comigo, do diagnóstico ao suporte.
+            </p>
+            <ul class="tags" role="list"><li>TypeScript</li><li>Node.js</li><li>Java</li><li>PostgreSQL</li><li>AWS</li><li>Google Cloud</li></ul>
           </div>
         </div>
-        <a class="portfolio-link" href="https://heliolevi.github.io/Projeto-portifolio/" target="_blank" rel="noreferrer">
-          Ver portfólio
-        </a>
-      </header>
+      </section>
 
-      <main class="container">
-        <section class="hero">
-          <div class="hero-copy">
-            <span class="pill">Agendamento de projetos</span>
-            <h2>Transforme processos em crescimento.</h2>
-            <p>
-              Solicite uma conversa para automatizar tarefas, criar sistemas, otimizar operação
-              e desenvolver soluções que tragam produtividade para a sua empresa.
-            </p>
-          </div>
-
-          <div class="hero-card">
-            <h3>Tipos de projeto</h3>
-            <ul>
-              <li>Automação de processos</li>
-              <li>Landing pages e sites</li>
-              <li>Sistemas e dashboards</li>
-              <li>Projetos personalizados</li>
+      <!-- DIAGNÓSTICO (captura) -->
+      <section class="section" id="diagnostico" aria-labelledby="diag-title">
+        <div class="wrap capture">
+          <div class="capture__copy">
+            <h2 id="diag-title" class="h2">Agende seu diagnóstico grátis.</h2>
+            <p class="sub">Três perguntas rápidas. Depois a conversa continua no WhatsApp, direto comigo.</p>
+            <ul class="checks" role="list">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>30 minutos, por vídeo ou WhatsApp</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Você sai sabendo o que dá pra automatizar</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Sem compromisso de contratar</li>
             </ul>
           </div>
-        </section>
 
-        <section class="form-section">
-          <div class="section-heading">
-            <p class="eyebrow">Solicitar orçamento</p>
-            <h3>Preencha os dados abaixo</h3>
-          </div>
+          <form class="quiz" id="quiz" novalidate>
+            <p class="quiz__progress" aria-live="polite"><span data-progress>Pergunta 1 de 3</span></p>
+            <div class="quiz__bar" aria-hidden="true"><span data-bar></span></div>
 
-          <form id="leadForm" class="lead-form">
-            <div class="grid two-columns">
-              <label>
-                <span>Nome completo</span>
-                <input type="text" name="nome" placeholder="Seu nome" required />
+            <fieldset class="quiz__step" data-step="1">
+              <legend class="h3">O que você quer resolver?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="objetivo" value="Automatizar uma tarefa repetitiva" /><span>Automatizar uma tarefa repetitiva</span></label>
+                <label class="chip"><input type="radio" name="objetivo" value="Criar um sistema para o meu negócio" /><span>Criar um sistema para o meu negócio</span></label>
+                <label class="chip"><input type="radio" name="objetivo" value="Criar um site ou landing page" /><span>Criar um site ou landing page</span></label>
+                <label class="chip"><input type="radio" name="objetivo" value="Ainda não sei, quero conversar" /><span>Ainda não sei, quero conversar</span></label>
+              </div>
+              <p class="field__error" role="alert" data-error></p>
+            </fieldset>
+
+            <fieldset class="quiz__step" data-step="2" hidden>
+              <legend class="h3">Como isso é feito hoje?</legend>
+              <div class="chips">
+                <label class="chip"><input type="radio" name="hoje" value="Em planilha" /><span>Em planilha</span></label>
+                <label class="chip"><input type="radio" name="hoje" value="No WhatsApp e no papel" /><span>No WhatsApp e no papel</span></label>
+                <label class="chip"><input type="radio" name="hoje" value="Num sistema que não atende" /><span>Num sistema que não atende</span></label>
+                <label class="chip"><input type="radio" name="hoje" value="Ainda não é feito" /><span>Ainda não é feito</span></label>
+              </div>
+              <p class="field__error" role="alert" data-error></p>
+            </fieldset>
+
+            <fieldset class="quiz__step" data-step="3" hidden>
+              <legend class="h3">Para onde eu te chamo?</legend>
+              <div class="field">
+                <label for="nome">Seu nome</label>
+                <input id="nome" name="nome" type="text" autocomplete="name" required />
+                <p class="field__error" role="alert" data-error-for="nome"></p>
+              </div>
+              <div class="field">
+                <label for="whats">WhatsApp com DDD</label>
+                <input id="whats" name="whats" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="whats-help" />
+                <p class="field__help" id="whats-help">Ex.: (98) 9 8888-7777</p>
+                <p class="field__error" role="alert" data-error-for="whats"></p>
+              </div>
+              <div class="field">
+                <label for="negocio">Nome do negócio <span class="opt">(opcional)</span></label>
+                <input id="negocio" name="negocio" type="text" autocomplete="organization" />
+              </div>
+              <label class="consent">
+                <input type="checkbox" name="aceite" required />
+                <span>Aceito que meu contato seja usado só para agendar e acompanhar o diagnóstico.</span>
               </label>
+              <p class="field__error" role="alert" data-error-for="aceite"></p>
+            </fieldset>
 
-              <label>
-                <span>E-mail</span>
-                <input type="email" name="email" placeholder="seu@email.com" required />
-              </label>
+            <div class="quiz__nav">
+              <button type="button" class="btn btn--ghost" data-back hidden>Voltar</button>
+              <button type="button" class="btn btn--primary" data-next>
+                Continuar
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </button>
+              <button type="submit" class="btn btn--primary" data-submit hidden>
+                Agendar diagnóstico
+                <svg class="icon" aria-hidden="true"><use href="#i-message" /></svg>
+              </button>
             </div>
 
-            <div class="grid two-columns">
-              <label>
-                <span>Telefone / WhatsApp</span>
-                <input type="tel" name="telefone" placeholder="(99) 9 9999-9999" required />
-              </label>
-
-              <label>
-                <span>Empresa / Negócio</span>
-                <input type="text" name="empresa" placeholder="Nome da empresa" />
-              </label>
+            <div class="quiz__done" data-done hidden tabindex="-1">
+              <h3 class="h3">Pronto. Sua mensagem abriu no WhatsApp.</h3>
+              <p>É só tocar em enviar por lá. Eu respondo no mesmo dia útil para marcar o horário.</p>
+              <a class="link" href="#" data-wa-link target="_blank" rel="noopener">Não abriu? Toque aqui</a>
             </div>
-
-            <div class="grid two-columns">
-              <label>
-                <span>Tipo de serviço</span>
-                <select name="servico" required>
-                  <option value="">Selecione</option>
-                  <option value="automacao">Automação de processos</option>
-                  <option value="site">Criação de site / landing page</option>
-                  <option value="sistema">Sistema / dashboard</option>
-                  <option value="consultoria">Consultoria estratégica</option>
-                  <option value="projeto_personalizado">Projeto personalizado</option>
-                </select>
-              </label>
-
-              <label>
-                <span>Urgência</span>
-                <select name="urgencia">
-                  <option value="normal">Normal</option>
-                  <option value="prioridade">Prioridade</option>
-                  <option value="urgente">Urgente</option>
-                </select>
-              </label>
-            </div>
-
-            <div class="grid two-columns">
-              <label>
-                <span>Data de preferência</span>
-                <input type="date" name="dataPreferencia" />
-              </label>
-
-              <label>
-                <span>Faixa de orçamento</span>
-                <select name="orcamento">
-                  <option value="">Selecione</option>
-                  <option value="ate_1k">Até R$ 1.000</option>
-                  <option value="1k_3k">R$ 1.000 - R$ 3.000</option>
-                  <option value="3k_10k">R$ 3.000 - R$ 10.000</option>
-                  <option value="10k_mais">Acima de R$ 10.000</option>
-                </select>
-              </label>
-            </div>
-
-            <label>
-              <span>Descreva o projeto</span>
-              <textarea
-                name="descricao"
-                rows="5"
-                placeholder="Conte um pouco sobre sua necessidade, objetivos e desafios."
-                required
-              ></textarea>
-            </label>
-
-            <div class="checkbox-row">
-              <input type="checkbox" name="aceite" id="aceite" required />
-              <label for="aceite">Aceito que este contato seja utilizado para agendamento e acompanhamento do projeto.</label>
-            </div>
-
-            <button type="submit" class="submit-btn">Enviar solicitação</button>
           </form>
-        </section>
-      </main>
-    </div>
+        </div>
+      </section>
 
-    <script src="script.js"></script>
+      <!-- DÚVIDAS -->
+      <section class="section section--deep" id="duvidas" aria-labelledby="duvidas-title">
+        <div class="wrap faq">
+          <h2 id="duvidas-title" class="h2">Dúvidas comuns.</h2>
+          <div class="faq__list">
+            <details>
+              <summary>Quanto custa?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>Depende do tamanho do problema. No diagnóstico eu já te passo uma faixa de valor, e o preço fechado vem no escopo, antes de você pagar qualquer coisa.</p>
+            </details>
+            <details>
+              <summary>Quanto tempo leva?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>O prazo também sai fechado no escopo. Automações pequenas costumam ser bem mais rápidas que um sistema completo, e eu te mostro o andamento durante a construção.</p>
+            </details>
+            <details>
+              <summary>E se você sumir depois da entrega?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>O código, a documentação e o manual ficam com você. Qualquer outro desenvolvedor consegue entender e manter o que eu entreguei.</p>
+            </details>
+            <details>
+              <summary>Eu não entendo nada de tecnologia. Tem problema?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>Nenhum. Você me explica o seu dia a dia e eu traduzo para o sistema. O manual é escrito para quem vai usar, não para programador.</p>
+            </details>
+            <details>
+              <summary>Você atende fora de São Luís?<svg class="icon" aria-hidden="true"><use href="#i-chevron" /></svg></summary>
+              <p>Sim. Eu trabalho de forma remota com negócios de todo o Brasil. O diagnóstico pode ser por vídeo ou pelo WhatsApp.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <div class="lockup lockup--sm">
+          <svg class="lockup__mark" aria-hidden="true"><use href="#trace" /></svg>
+          <span class="lockup__rule" aria-hidden="true"></span>
+          <span class="lockup__text">
+            <span class="lockup__name">hélio levi</span>
+            <span class="lockup__role">BACK-END · SYSTEMS</span>
+          </span>
+        </div>
+        <ul class="footer__links" role="list">
+          <li><a href="https://www.instagram.com/hl.build/" target="_blank" rel="noopener">Instagram @hl.build</a></li>
+          <li><a href="https://heliolevi.github.io/Projeto-portifolio/" target="_blank" rel="noopener">Portfólio</a></li>
+          <li><a href="mailto:hlevi200730@gmail.com">hlevi200730@gmail.com</a></li>
+        </ul>
+        <p class="footer__legal">© 2026 HL. Criada e mantida por Hélio Levi, São Luís, MA.</p>
+      </div>
+    </footer>
+
+    <a class="dock btn btn--primary" href="#diagnostico" data-dock aria-hidden="true" tabindex="-1">
+      Agendar diagnóstico
+      <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+    </a>
+
+    <script src="script.js" defer></script>
   </body>
 </html>
